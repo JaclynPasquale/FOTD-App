@@ -12,8 +12,8 @@ angular.module("fotdApp")
   })
   .when("/takefotd", {
     templateUrl: "views/takefotd.html",
-    controller: "CameraController",
-    controllerAs: "camCtrl"
+    controller: "MakeupController",
+    controllerAs: "makeupCtrl"
   })
 
   .when("/logout", {
@@ -21,19 +21,19 @@ angular.module("fotdApp")
     controller: "LogoutController"
 
   })
-  .when("/newpic", {
+  .when("/newphoto", {
     templateUrl: "views/takefotd.html",
-    controller: "CameraController",
-    controllerAs: "camCtrl",
+    controller: "MakeupController",
+    controllerAs: "makeupCtrl",
     private: "true"
   })
-  .when("/allpics", {
+  .when("/allphoto", {
     templateUrl: "views/allfotd.html",
     controller: "",
     controllerAs: "",
     private: "true"
   })
-  .when("/allpics/:id", {
+  .when("/allphoto/:id", {
     templateUrl: "views/showfotd.html",
     controller: "",
     controllerAs: "",

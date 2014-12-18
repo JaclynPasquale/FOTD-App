@@ -35,5 +35,15 @@
 
     })
 
+    .controller("MakeupController", function($scope, makeupFactory) {
+      var vm = this;
+      vm.addMakeupInfo = function() {
+        makeupFactory.addMakeupInfo(vm.newMakeup, function(data) {
+          vm.Makeup = vm.Makeup || {};
+          vm.Makeup[data.name] = vm.newMakeup;
+          });
+        };
+      })
+
  }());
  //end of iffe
