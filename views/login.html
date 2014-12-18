@@ -1,0 +1,14 @@
+<form name="loginForm" ng-submit="loginCtrl.login()" novalidate>
+  <div class="form-group" ng-class="{"has-error": loginForm.$dirty && !loginCtrl.email}">
+    <label class="control-label" >Email Address</label>
+    <input class="form-control" type="email" ng-model="loginCtrl.email">
+  </div>
+  <div class="form-group" ng-class="{"has-error": loginForm.$dirty && !loginCtrl.password}">
+    <label class="control-label">Password</label>
+    <input class="form-control" type="password" ng-model="loginCtrl.password">
+  </div>
+  <div class="form-group">
+    <input class="btn btn-success" type="submit" value="Login" ng-click="loginCtrl.login()">
+    <div class="btn btn-primary" href="" ng-click="loginCtrl.register()" >Register</div>
+  </div>
+</form>
