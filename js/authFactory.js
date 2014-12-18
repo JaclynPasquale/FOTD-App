@@ -44,6 +44,7 @@
       ref.unauth(function() {
         $rootScope.user = null;
         cb();
+        console.log("User is logged out");
       });
     };
 

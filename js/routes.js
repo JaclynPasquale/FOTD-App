@@ -10,10 +10,21 @@ angular.module("fotdApp")
     controller: "LoginController",
     controllerAs: "loginCtrl"
   })
+  .when("/takefotd", {
+    templateUrl: "views/takefotd.html",
+    controller: "CameraController",
+    controllerAs: "camCtrl"
+  })
+
+  .when("/logout", {
+    template: "",
+    controller: "LogoutController"
+
+  })
   .when("/newpic", {
     templateUrl: "views/takefotd.html",
-    controller: "LoginController",
-    controllerAs: "loginCtrl",
+    controller: "CameraController",
+    controllerAs: "camCtrl",
     private: "true"
   })
   .when("/allpics", {

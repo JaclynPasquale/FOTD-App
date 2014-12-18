@@ -17,7 +17,7 @@
 
      vm.login = function() {
        authFactory.login(vm.email, vm.password, function() {
-         $location.path("/");
+         $location.path("/takefotd");
          $scope.$apply();
        });
      };
@@ -28,12 +28,12 @@
         $location.path("/login");
         $scope.$apply();
       });
-    });
+    })
 
-    // .controller("WebcamController", function(){
-    //
-    //
-    // });
+    .controller("CameraController", function($scope) {
+      var vm = this;
+
+    })
 
  }());
  //end of iffe
