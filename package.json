@@ -1,0 +1,21 @@
+{
+  "name": "FOTD-App",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+"server": "python -m SimpleHTTPServer",
+"deploy": "s3-cli sync --delete-removed -P . s3://fotd.jaclynpasquale.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JaclynPasquale/FOTD-App.git"
+  },
+  "author": "",
+  "license": "mit",
+  "bugs": {
+    "url": "https://github.com/JaclynPasquale/FOTD-App/issues"
+  },
+  "homepage": "https://github.com/JaclynPasquale/FOTD-App"
+}
