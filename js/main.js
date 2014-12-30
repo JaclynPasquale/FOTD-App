@@ -1,6 +1,6 @@
 ;(function() {
   "use strict";
 
-  angular.module("fotdApp", [ "ngRoute", "webcam" ])
+  angular.module("fotdApp", [ "ngRoute",  ])
 
 }());

@@ -2,7 +2,7 @@
   "use strict";
 
 angular.module("fotdApp")
-.config(function($routeProvider) {
+.config(function($routeProvider){
   $routeProvider
 
   .when("/", {
@@ -10,14 +10,14 @@ angular.module("fotdApp")
     controller: "LoginController",
     controllerAs: "loginCtrl"
   })
-  .when("/takefotd", {
+  .when("/takephoto", {
     templateUrl: "views/takefotd.html",
-    controller: "MakeupController",
-    controllerAs: "makeupCtrl"
+    controller: "WebcamController",
+    controllerAs: "webcamCtrl"
   })
 
   .when("/logout", {
-    template: "",
+    template: "/",
     controller: "LogoutController"
 
   })
@@ -27,13 +27,13 @@ angular.module("fotdApp")
     controllerAs: "makeupCtrl",
     private: "true"
   })
-  .when("/allphoto", {
+  .when("/allphotos", {
     templateUrl: "views/allfotd.html",
     controller: "",
     controllerAs: "",
     private: "true"
   })
-  .when("/allphoto/:id", {
+  .when("/allphotos/:id", {
     templateUrl: "views/showfotd.html",
     controller: "",
     controllerAs: "",

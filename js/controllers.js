@@ -17,7 +17,7 @@
 
      vm.login = function() {
        authFactory.login(vm.email, vm.password, function() {
-         $location.path("/takefotd");
+         $location.path("/takephoto");
          $scope.$apply();
        });
      };
@@ -30,10 +30,10 @@
       });
     })
 
-    .controller("CameraController", function($scope) {
-      var vm = this;
-
-    })
+    // .controller("CameraController", function($scope) {
+    //   var vm = this;
+    //
+    // })
 
     .controller("MakeupController", function($scope, makeupFactory) {
       var vm = this;

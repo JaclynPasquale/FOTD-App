@@ -1,29 +1,52 @@
 
-<webcam >
+<section>
+
+<!-- ng-controller="webcamCtrl"> -->
+
+  <button ng-click="savePhoto()" class="webPhoto">Save</button>
+  <button ng-click="takePhoto()" class="webPhoto">Take photo</button>
+  <div id="show-contain">
+    <video id="video"></video>
+    <canvas id="canvas"></canvas>
+    <img id="photo" style='display:none'/>
+  </div>
+
+
+  <!-- <div>
+    <p>Press <b>Take Photo</b> and look below.</p>
+    <pre>Base64: {{photo}}</pre>
+  </div> -->
+</section>
+
+<section>
+  <accordian>
+    <form class="form-horizontal">
+      <label class="col-sm-2 control-label">Brand</label>
+      <div class="col-sm-10 form-group">
+        <input class="form-control" type="text" ng-model="makeupCtrl.newMakeup.brand">
+      </div >
+
+      <label class="col-sm-2 control-label">Product Name</label>
+      <div class="col-sm-10 form-group">
+        <input class="form-control" type="text" ng-model="makeupCtrl.newMakeup.productName">
+      </div>
+
+      <label class="col-sm-2 control-label">Color</label>
+      <div class="col-sm-10 form-group">
+        <input class="form-control" type="text" ng-model="makeupCtrl.newMakeup.color">
+      </div>
+      <button  class="btn btn-primary" ng-click="makeupCtrl.addMakeupInfo()">Add Makeup</button>
+    </form>
+
+  </accordian>
+</section>
+
+<!--  <webcam>
 <button class="btn btn-info" ng-click="makeSnapshot()">
-  <i class="fa fa-camera-retro"></i> Take Photo</button>
+ <i class="fa fa-camera-retro"></i> Take Photo</button>
 
 <button class="btn btn-success" ng-click="sendSnapshotToFb()">Save Photo</button>
 
 <canvas id="photo"></canvas>
-
-<accordian>
-  <form class="form-horizontal">
-      <label class="col-sm-2 control-label">Brand</label>
-    <div class="col-sm-10 form-group">
-      <input class="form-control" type="text" ng-model="makeupCtrl.newMakeup.brand">
-    </div >
-
-      <label class="col-sm-2 control-label">Product Name</label>
-    <div class="col-sm-10 form-group">
-      <input class="form-control" type="text" ng-model="makeupCtrl.newMakeup.productName">
-    </div>
-
-      <label class="col-sm-2 control-label">Color</label>
-    <div class="col-sm-10 form-group">
-      <input class="form-control" type="text" ng-model="makeupCtrl.newMakeup.color">
-    </div>
-    <button  class="btn btn-primary" ng-click="makeupCtrl.addMakeupInfo()">Add Makeup</button>
-  </form>
-
-</accordian>
+</webcam>
+</section> -->
