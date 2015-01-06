@@ -1,26 +1,21 @@
 
+
 <section>
-
-<!-- ng-controller="webcamCtrl"> -->
-
-  <button ng-click="savePhoto()" class="webPhoto">Save</button>
-  <button ng-click="takePhoto()" class="webPhoto">Take photo</button>
+  <button ng-click="makeupCtrl.savePhoto()" class="webPhoto">Save</button>
+  <button ng-click="makeupCtrl.takePhoto()" class="webPhoto">Take photo</button>
   <div id="show-contain">
     <video id="video"></video>
     <canvas id="canvas"></canvas>
     <img id="photo" style='display:none'/>
   </div>
 
-</section>
-
-<section >
-  <form class="form-horizontal" ng-submit="makeupCtrl.addMakeupInfo()">
+  <form class="form-horizontal"  ng-submit="makeupCtrl.addMakeupInfo()">
   <div class="thumbnail">
     <img ng-hide="makeupCtrl.files" src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image">
     <img ng-show="makeupCtrl.files[0].dataUrl" ng-src="{{makeupCtrl.files[0].dataUrl}}">
   </div>
 
-    <input type="file"
+    <input ng-multiple="true" type="file"
     ng-model="makeupCtrl.files"
     ng-file-select
     ng-file-change="makeupCtrl.fileSelected()"
