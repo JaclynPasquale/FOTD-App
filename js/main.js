@@ -1,6 +1,6 @@
 ;(function() {
   "use strict";
 
-  angular.module("fotdApp", [ "ngRoute",  ])
+  angular.module("fotdApp", [ "ngRoute", 'angularFileUpload' ])
 
 }());

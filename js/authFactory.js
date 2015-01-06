@@ -53,11 +53,12 @@
         password: password
       }, function(error, authData) {
         if (error === null) {
-          console.log("User logged in successfully", authData);
+          alertify.success("Success notification", authData);
           $rootScope.user = authData;
           ref.child("users").child(authData.uid).child("authData").set(authData);
           cb();
         } else {
+          alertify.error("Error notification");
           console.log("User Login Failed", error);
         }
       }

@@ -19,6 +19,21 @@
 </section>
 
 <section>
+  <div class="thumbnail">
+      <img ng-hide="makeupCtrl.files" src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image">
+      <img ng-show="makeupCtrl.files[0].dataUrl" ng-src="{{makeupCtrl.files[0].dataUrl}}">
+    </div>
+    <form ng-submit="makeupCtrl.uploadFile()">
+       <input type="file"
+         ng-model="makeupCtrl.files"
+         ng-file-select
+         ng-file-change="makeupCtrl.fileSelected()"
+          accept="image/*">
+        <input type="submit">
+      </form>
+</section>
+
+<section >
   <accordian>
     <form class="form-horizontal">
       <label class="col-sm-2 control-label">Brand</label>
