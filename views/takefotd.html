@@ -11,31 +11,23 @@
     <img id="photo" style='display:none'/>
   </div>
 
-
-  <!-- <div>
-    <p>Press <b>Take Photo</b> and look below.</p>
-    <pre>Base64: {{photo}}</pre>
-  </div> -->
-</section>
-
-<section>
-  <div class="thumbnail">
-      <img ng-hide="makeupCtrl.files" src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image">
-      <img ng-show="makeupCtrl.files[0].dataUrl" ng-src="{{makeupCtrl.files[0].dataUrl}}">
-    </div>
-    <form ng-submit="makeupCtrl.uploadFile()">
-       <input type="file"
-         ng-model="makeupCtrl.files"
-         ng-file-select
-         ng-file-change="makeupCtrl.fileSelected()"
-          accept="image/*">
-        <input type="submit">
-      </form>
 </section>
 
 <section >
+  <form class="form-horizontal" ng-submit="makeupCtrl.addMakeupInfo()">
+  <div class="thumbnail">
+    <img ng-hide="makeupCtrl.files" src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image">
+    <img ng-show="makeupCtrl.files[0].dataUrl" ng-src="{{makeupCtrl.files[0].dataUrl}}">
+  </div>
+
+    <input type="file"
+    ng-model="makeupCtrl.files"
+    ng-file-select
+    ng-file-change="makeupCtrl.fileSelected()"
+    accept="image/*">
+
   <accordian>
-    <form class="form-horizontal">
+
       <label class="col-sm-2 control-label">Brand</label>
       <div class="col-sm-10 form-group">
         <input class="form-control" type="text" ng-model="makeupCtrl.newMakeup.brand">
@@ -50,8 +42,8 @@
       <div class="col-sm-10 form-group">
         <input class="form-control" type="text" ng-model="makeupCtrl.newMakeup.color">
       </div>
-      <button  class="btn btn-primary" ng-click="makeupCtrl.addMakeupInfo()">Add Makeup</button>
-    </form>
+      <input type="submit" class="btn btn-primary" >Add Makeup</button>
+    </form >
 
   </accordian>
 </section>

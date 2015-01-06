@@ -36,9 +36,11 @@
 
       //makeup business
       vm.addMakeupInfo = function() {
+        console.log('worked');
         makeupFactory.addMakeupInfo(vm.newMakeup, function(data) {
           vm.Makeup = vm.Makeup || {};
           vm.Makeup[data.name] = vm.newMakeup;
+          _uploadFile(data.name);
           });
         };
 
@@ -51,11 +53,11 @@
           });
         };
 
-        vm.uploadFile = function(){
+        function _uploadFile(makeupId){
           console.log('sent to s3')
           var file = vm.files[0];
-          upload.uploadPhoto(file, name, function(){
-            console.log('hi');
+          upload.uploadPhoto(file, $rootScope.user.uid, makeupId, function(){
+
           });
         };
 
@@ -81,16 +83,16 @@
 
       //change out todoId
 
-      factory.uploadPhoto = function(file, userId, cb){
+      factory.uploadPhoto = function(file, userId, photoId, cb){
 
-        var fileName = userId + '/' + file.name + '.jpg';
+
 
         $upload.upload({
           url: 'https://fotd-image-upload.s3.amazonaws.com',
           method: 'POST',
           data: {
             'Content-Type' : file.type,
-            key: userId + '/' + name + '.jpg',
+            key: userId + '/' + photoId + '.jpg',
             acl: 'public-read',
             awsaccesskeyid: 'AKIAI6TMM3TOLI4KFABQ',
             policy: 'eyJleHBpcmF0aW9uIjoiMjAyMC0wMS0wMVQwMDowMDowMFoiLCJjb25kaXRpb25zIjpbeyJidWNrZXQiOiJmb3RkLWltYWdlLXVwbG9hZCJ9LHsiYWNsIjogInB1YmxpYy1yZWFkIn0sWyJzdGFydHMtd2l0aCIsIiRDb250ZW50LVR5cGUiLCIiXSxbInN0YXJ0cy13aXRoIiwiJGtleSIsIiJdXX0=',
