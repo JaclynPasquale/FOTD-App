@@ -84,11 +84,12 @@
             $http.put(FIREBASE_URL + "users/" + $rootScope.user.uid + "/makeup/" + data.name  + "/fotdImage" + '/.json?auth=' + $rootScope.user.token, fotdImage )
             .success(function(){
             console.log("success image to firebase")
+            $location.path('/showFOTD');
           }).error(function(err){
               console.log("nope")
             })
           })
-          $location.path('/showFOTD');
+
           });
         };
 
@@ -197,7 +198,7 @@
           file: file
         })
         .success(function(data, status, headers, config){
-      
+
           console.log("upload photo")
           cb('https://fotd-image-upload.s3.amazonaws.com/' + $rootScope.user.uid + '/' + config.file.name);
 
