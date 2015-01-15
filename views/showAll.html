@@ -1,0 +1,17 @@
+<div ng-repeat="(makeupId, makeup) in makeupCtrl.makeup"> -->
+<p>
+  {{makeup.brand}}
+</p>
+<p>
+  {{makeup.color}}
+</p>
+<p>
+  {{makeup.productName}}
+</p>
+<p>
+  {{makeup.date}}
+</p>
+<img ng-src="https://fotd-image-upload.s3.amazonaws.com/' + config.file.name">
+  <img ng-src="https://s3.amazonaws.com/fotd-image-upload/{{userId}}/{{photoId}}.png">
+  <!-- ng-repeat="makeup in makeup {{'https://s3.amazonaws.com/fotd-image-upload/' + uid + "/" + photoId}}" -->
+<!-- </div> -->

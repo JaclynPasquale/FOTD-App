@@ -1,21 +1,30 @@
-<form name="loginForm" ng-submit="loginCtrl.login()" novalidate>
-  <div class="form-group" ng-class="{'has-error': loginForm.$dirty && !loginCtrl.email}">
-    <label class="control-label" >Email Address</label>
-    <input class="form-control" type="email" ng-model="loginCtrl.email">
-  </div>
-  <div class="form-group" ng-class="{'has-error': loginForm.$dirty && !loginCtrl.password}">
-    <label class="control-label">Password</label>
-    <input class="form-control" type="password" ng-model="loginCtrl.password">
-  </div>
-  <div class="form-group">
-    <input type="submit" class="btn btn-success " value="Login" ng-class="{disabled: loginForm.$invalid}">
-    <div class="btn btn-primary" ng-class="{disabled: loginForm.$invalid}" ng-click="loginCtrl.register()">Register</div>
-    <div class="btn btn-warning"  ng-click="loginCtrl.forgotPassword()">Forgot Password</div>
 
-  </div>
 
-  <!-- <div class="form-group">
-    <input class="btn btn-success" type="submit" value="Login" ng-click="loginCtrl.login()">
-    <div class="btn btn-primary" href="" ng-click="loginCtrl.register()" >Register</div>
-  </div> -->
-</form>
+<div class="container ">
+
+  <div id="login">
+
+    <form class="small-offset-11 small-4 columns" name="loginForm" ng-submit="loginCtrl.login()" novalidate>
+
+      <fieldset class="clearfix">
+
+        <p>
+          <span class="fa fa-envelope-o"></span>
+          <input ng-model="loginCtrl.email" type="text" value="Email" onBlur="if(this.value == '') this.value = 'Email'" onFocus="if(this.value == 'Email') this.value = ''" required>
+        </p>
+
+        <p>
+          <span class="fa fa-lock"></span>
+          <input ng-model="loginCtrl.password" type="password"  value="Password" onBlur="if(this.value == '') this.value = 'Password'" onFocus="if(this.value == 'Password') this.value = ''" required>
+          <div class="forgot-pw" ng-click="loginCtrl.forgotPassword(); loginCtrl.backgroundChange()">Forgot Password</div>
+        </p>
+
+        <input type="submit"  value="Login" ng-class="{disabled: loginForm.$invalid}">
+        <div class="register-button" ng-class="{disabled: loginForm.$invalid}" ng-click="loginCtrl.register(); loginCtrl.backgroundChange()">Register</div>
+
+
+      </fieldset>
+
+    </form>
+
+</div>

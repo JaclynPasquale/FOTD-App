@@ -3,20 +3,41 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FOTD: Face of the Day</title>
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic|Asap:400,700,700italic,400italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="bower_components/foundation/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/foundation/css/foundation.css">
   <link rel="stylesheet" href="bower_components/alertify.js/themes/alertify.default.css">
   <link rel="stylesheet" href="bower_components/alertify.js/themes/alertify.core.css">
   <link rel="stylesheet" href="bower_components/alertify.js/themes/alertify.bootstrap.css">
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="styles/main.css">
+
 </head>
 <body>
-  <div class="container">
-    <h1>FOTD</h1>
-    <h3>Face of the Day</h3>
-    <a href="/#/logout" class="btn btn-warning" ng-show="user">Logout</a>
+  <div class="wrapper">
+
+
+    </div>
+
+      <nav class="top-bar" data-topbar role="navigation" >
+        <div class="row">
+
+          <div class="large-1 columns large-offset-1">
+            <img class="logo" src="../images/FOTD-green.png">
+          </div>
+          <div class="large-6 columns">
+            <h3 class="tagline">Face of the Day</h3>
+          </div>
+          <div class="large-2 columns logout">
+            <a href="/#/logout" class="button logout" ng-show="user">Logout</a>
+          </div>
+
+        </div>
+      </nav>
+
+
 
     <div ng-view></div>
 
@@ -30,22 +51,42 @@
   <script src="bower_components/webcam-directive/dist/webcam.min.js"></script>
   <script src="bower_components/ng-file-upload/angular-file-upload.min.js"></script>
 
-  <script src="js/main.js"></script>
-  <script src="js/constant.js"></script>
-  <script src="js/routes.js"></script>
+  <script src="scripts/main.js"></script>
+  <script src="scripts/constant.js"></script>
+  <script src="scripts/routes.js"></script>
 
-  <script src="js/auth/authRoutes.js"></script>
-  <script src="js/auth/authController.js"></script>
-  <script src="js/auth/authFactory.js"></script>
+  <script src="scripts/auth/authRoutes.js"></script>
+  <script src="scripts/auth/authController.js"></script>
+  <script src="scripts/auth/authFactory.js"></script>
 
-  <script src="js/makeupController.js"></script>
+  <script src="scripts/makeupController.js"></script>
+  <scrip src="scripts/camFactory.js"></scrip>
+  <script src="scripts/makeupFactory.js"></script>
+  <script src="scripts/webcamController.js"></script>
 
+<script>
 
-  <scrip src="js/camFactory.js"></scrip>
-  <script src="js/makeupFactory.js"></script>
-  <script src="js/webcamController.js"></script>
+// $on('$routeChangeStart', function(next, current) {
+//   ref = new Firebase("https://fotd-app.firebaseio.com/")
+//   if (ref.getAuth() === true){
+//     $("body").addClass("loggedinBkgrnd")
+//   } else if (ref.getAuth() === false) {
+//     $("body").addClass("loginBkgrnd")
+//   }
+// });
 
+//
+// $(document).ready(function(){
+//   ref = new Firebase("https://fotd-app.firebaseio.com/")
+//   if (ref.getAuth() === true){
+//     $("body").addClass("loggedinBkgrnd")
+//   } else if (ref.getAuth() === false) {
+//     $("body").addClass("loginBkgrnd")
+//   }
+//
+// });
 
+</script>
 
 </body>
 </html>

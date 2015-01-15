@@ -1,0 +1,256 @@
+body {
+  background: url(../images/girl_img.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #d9d628;
+}
+
+section {
+  background-color: #46494C;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.loggedinBkgrnd {
+  background: url(../images/purple-triangles.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
+
+.loginBkgrnd {
+  background: url(../images/girl_img.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+label {
+  color: #fff;
+}
+
+
+nav.top-bar {
+  background-color: #29252B;
+  color: #d9d628;
+  height: 78px;
+  position: relative;
+}
+
+.logo {
+  max-width: 100px;
+  margin: 10px;
+  margin-right: 20px;
+}
+
+label {
+  color: #F9F5E8;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  text-align: left;
+}
+
+.loginform {
+  background-color: #3b032f;
+  margin-top: 75px;
+  padding: 20px;
+  border-radius: 5px;
+
+}
+.tagline {
+  color: #F9F5E8;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 20px;
+  margin: 30px 0 0 25px;
+
+}
+.button {
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding: 8px;
+  background-color:#48414c;
+  color: #FFF;
+
+}
+
+.logout {
+  margin-top: 7px;
+  color: #D9D64A;
+}
+
+.pickFile, .takePic, input.addMakeup {
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  border-radius: 3px;
+  background-color: #9E1380;
+  font-size: 13px;
+  text-transform: uppercase;
+  height: 40px;
+  padding: 10px;
+  text-align: center;
+}
+input.addMakeup:hover, .takePic:hover, .pickFile:hover {
+background-color: #A72A8C;
+}
+
+input[type="file"]{
+
+
+}
+
+
+.thumbnail {
+  margin: 0 auto;
+}
+
+.makeupForm {
+  margin: 0 auto;
+}
+
+/* hover color on button lighter fuschia #A72A8C*/
+
+/* CSS Document */
+/* ---------- FONTAWESOME ---------- */
+/* ---------- http://fortawesome.github.com/Font-Awesome/ ---------- */
+/* ---------- http://weloveiconfonts.com/ ---------- */
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+/* ---------- ERIC MEYER'S RESET CSS ---------- */
+/* ---------- http://meyerweb.com/eric/tools/css/reset/ ---------- */
+@import url(http://meyerweb.com/eric/tools/css/reset/reset.css);
+/* ---------- FONTAWESOME ---------- */
+
+}
+
+/* ---------- GENERAL ---------- */
+* {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*:before, *:after {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  color: #606468;
+  font: 87.5%/1.5em "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;;
+  margin: 0;
+}
+
+
+input {
+  border: none;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5em;
+  padding: 0;
+  -webkit-appearance: none;
+}
+
+p {
+  line-height: 1.5em;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before, .clearfix:after {
+  content: ' ';
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+
+.container {
+  left: 50%;
+  position: fixed;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+/* ---------- LOGIN ---------- */
+#login {
+  width: 280px;
+}
+
+#login form span {
+  background-color: #363b41;
+  border-radius: 3px 0px 0px 3px;
+  color: #606468;
+  display: block;
+  float: left;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  width: 50px;
+}
+
+#login form input {
+  height: 50px;
+}
+
+#login form input[type="text"], #login form input[type="password"] {
+  background-color: #3b4148;
+  border-radius: 0px 3px 3px 0px;
+  color: #F9F5E8;
+  margin-bottom: 1em;
+  padding: 0 16px;
+  width: 230px;
+}
+
+#login form input[type="submit"], #login form div.register-button {
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  background-color: #9E1380;
+  color: black;
+  font-weight: bold;
+  margin-bottom: 1em;
+  text-transform: uppercase;
+  width: 280px;
+}
+
+#login form div.register-button {
+  height: 50px;
+  text-align: center;
+  padding-top: 15px;
+}
+
+div.forgot-pw {
+  float: right;
+}
+div.forgot-pw:hover {
+  color: #A72A8C;
+}
+
+#login form input[type="submit"]:hover {
+  background-color: #A72A8C;
+}
+
+#login form div.register-button:hover {
+  background-color: #A72A8C;
+}
+
+#login > p {
+  text-align: center;
+}
+
+#login > p span {
+  padding-left: 5px;
+}
+
+fieldset {
+  border-color: #9E1380;
+  margin: 20px;
+}
