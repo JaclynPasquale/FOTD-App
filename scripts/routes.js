@@ -15,14 +15,14 @@ angular.module("fotdApp")
   })
   .when("/showFOTD", {
     templateUrl: "views/showAll.html",
-    controller: "showFotdController",
-    controllerAs: "showCtrl",
+    controller: "makeupListController",
+    controllerAs: "makeupListCtrl",
     private: "true"
   })
   .when("/allphotos/:id", {
     templateUrl: "views/showEdit.html",
-    controller: "",
-    controllerAs: "",
+    controller: "makeupListController",
+    controllerAs: "makeupListCtrl",
     private: "true"
   })
 

@@ -2,7 +2,7 @@
 
   angular.module("fotdApp")
 
-.controller("MakeupController", function($scope, makeupFactory, upload, $rootScope, $location, authFactory) {
+.controller("MakeupController", function($scope, makeupFactory, upload, $rootScope, $location, authFactory, $http, FIREBASE_URL) {
       var vm = this;
       $scope.photo = {};
 
@@ -77,7 +77,17 @@
         makeupFactory.addMakeupInfo(vm.newMakeup, function(data) {
           vm.Makeup = vm.Makeup || {};
           vm.Makeup[data.name] = vm.newMakeup;
-          _uploadFile(data.name);
+          _uploadFile(data.name, function(link){
+            var fotdImage = [link]
+            console.log($rootScope.user);
+
+            $http.put(FIREBASE_URL + "users/" + $rootScope.user.uid + "/makeup/" + data.name  + "/fotdImage" + '/.json?auth=' + $rootScope.user.token, fotdImage )
+            .success(function(){
+            console.log("success image to firebase")
+          }).error(function(err){
+              console.log("nope")
+            })
+          })
           $location.path('/showFOTD');
           });
         };
@@ -119,20 +129,30 @@
           return blob;
         }
 
-        function _uploadFile(makeupId){
+        function _uploadFile(makeupId, cb){
           console.log('sent to s3')
           if (vm.files){
             var file = vm.files[0];
-            upload.uploadPhoto(file, $rootScope.user.uid, makeupId , function(){
-              var amazonLinks = [fileLink];
-              var linkId = makeupId + '/amazonImg';
-              
+            upload.uploadPhoto(file, $rootScope.user.uid, makeupId , function(s3link){
+
+              var linkId = s3link ;
+              cb(linkId);
+              console.log(cb);
+
 
             });
           } else {
 
             var file = _b64toBlob($scope.photo);
-            upload.uploadWebcam(file, $rootScope.user.uid, makeupId , function(){
+            file.name = makeupId + ".jpg";
+
+            upload.uploadWebcam(file, $rootScope.user.uid, makeupId , function(s3link){
+
+              console.log('sent to s3')
+              var linkId = s3link ;
+              cb(linkId);
+              console.log(cb);
+
 
             });
           }
@@ -156,7 +176,7 @@
         }
     })
 
-    .factory('upload', function($upload){
+    .factory('upload', function($upload, $rootScope){
       var factory = {}
 
 
@@ -177,7 +197,9 @@
           file: file
         })
         .success(function(data, status, headers, config){
-          cb('https://fotd-image-upload.s3.amazonaws.com/' + config.file.name);
+      
+          console.log("upload photo")
+          cb('https://fotd-image-upload.s3.amazonaws.com/' + $rootScope.user.uid + '/' + config.file.name);
 
         });
       };
@@ -188,8 +210,8 @@
           url: 'https://fotd-image-upload.s3.amazonaws.com',
           method: 'POST',
           data: {
-            'Content-Type' : "img/png",
-            key: userId + '/' + photoId + '.png',
+            'Content-Type' : "image/png",
+            key: userId + '/' + photoId + '.jpg',
             acl: 'public-read',
             awsaccesskeyid: 'AKIAI6TMM3TOLI4KFABQ',
             policy: 'eyJleHBpcmF0aW9uIjoiMjAyMC0wMS0wMVQwMDowMDowMFoiLCJjb25kaXRpb25zIjpbeyJidWNrZXQiOiJmb3RkLWltYWdlLXVwbG9hZCJ9LHsiYWNsIjogInB1YmxpYy1yZWFkIn0sWyJzdGFydHMtd2l0aCIsIiRDb250ZW50LVR5cGUiLCIiXSxbInN0YXJ0cy13aXRoIiwiJGtleSIsIiJdXX0=',
@@ -198,13 +220,15 @@
           file: img
         })
         .success(function(data, status, headers, config){
-          cb('https://fotd-image-upload.s3.amazonaws.com/' + config.file.name);
+
+          cb('https://fotd-image-upload.s3.amazonaws.com/' + $rootScope.user.uid + '/' + config.file.name);
 
         });
       };
       return factory;
 
     })
+
 
 
 
