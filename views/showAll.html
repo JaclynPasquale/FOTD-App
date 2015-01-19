@@ -1,16 +1,18 @@
-<div ng-repeat="(makeupId, makeup) in makeupListCtrl.makeup"> -->
-<p>
-  {{makeup.brand}}
-</p>
-<p>
+<section class="showall">
+  <div class="faces" ng-repeat="(makeupId, makeup) in makeupListCtrl.makeup">
+    <!-- <p>
+    {{makeup.brand}}
+  </p>
+  <p>
   {{makeup.color}}
 </p>
 <p>
-  {{makeup.productName}}
+{{makeup.productName}}
 </p>
 <p>
-  {{makeup.date}}
-</p>
-<div>
-<img src="{{makeup.fotdImage[0]}}" >
+{{makeup.date}}
+</p> -->
+    <img src="{{makeup.fotdImage[0]}}">
 </div>
+
+</section>

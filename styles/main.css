@@ -1,20 +1,45 @@
-body {
+section.login {
   background: url(../images/girl_img.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-
-
+  height: 100%;
+  position: absolute;
+  width: 100%;
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #d9d628;
 }
 
-section {
-  background-color: #46494C;
+section.fotd, section.showall {
+  background-color: #3E3A40;
   text-align: center;
-  margin: 0 auto;
+  margin: 78px auto 0;
 }
+.webcamContainer, .imageContainer {
+  margin-top:16px;
+  position:relative;
+}
+.webcamContainer::after {
+  content: "OR";
+  position: absolute;
+  right: -24px;
+  top: 100px;
+  font-size: 36px;
+}
+
+.webcamContainer video {
+  width:320px;
+  height:240px;
+  background: #535055;
+}
+
+.webcamContainer canvas {
+  position: relative;
+  top: -16px;
+  margin-top: -240px;
+}
+
 
 .loggedinBkgrnd {
   background: url(../images/purple-triangles.jpg) no-repeat center center fixed;
@@ -42,7 +67,10 @@ nav.top-bar {
   background-color: #29252B;
   color: #d9d628;
   height: 78px;
-  position: relative;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 9999;
 }
 
 .logo {
@@ -82,9 +110,62 @@ label {
 
 }
 
-.logout {
-  margin-top: 7px;
+.top-bar .logout {
   color: #D9D64A;
+  padding: 10px;
+  display: inline;
+  border-radius: 3px;
+  margin-top: -5px;
+
+}
+
+.upload-img-preview {
+  max-width: 320px;
+}
+
+
+.imageUpload {
+  color:#fff;
+  background: #9E1380;
+  position: relative;
+  overflow: hidden;
+  margin:18px 10px;
+  display: inline-block;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  white-space: nowrap;
+  padding: 10px 25px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 3px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transition: all 300ms ease-in-out;
+  -webkit-transition: all 300ms ease-in-out;
+}
+
+.imageUpload:hover {
+  background: #A72A8C;
+}
+
+.imageUpload span{
+  text-transform: uppercase;
+}
+
+.imageUpload input.upload {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  filter: alpha(opacity=0);
 }
 
 .pickFile, .takePic, input.addMakeup {
@@ -94,9 +175,19 @@ label {
   font-size: 13px;
   text-transform: uppercase;
   height: 40px;
-  padding: 10px;
+  padding: 10px 25px;
   text-align: center;
 }
+
+input.addMakeup {
+  background: #D9D64A;
+  color: #29252b;
+  height: auto;
+  padding: 13px 50px;
+  font-size: 16px;
+}
+
+
 input.addMakeup:hover, .takePic:hover, .pickFile:hover {
 background-color: #A72A8C;
 }
@@ -109,10 +200,13 @@ input[type="file"]{
 
 .thumbnail {
   margin: 0 auto;
+  max-width:650px;
 }
 
-.makeupForm {
-  margin: 0 auto;
+.makeupForm.row {
+  display: table;
+  width: 100%;
+  max-width: 62.5em;
 }
 
 /* hover color on button lighter fuschia #A72A8C*/
@@ -141,8 +235,9 @@ input[type="file"]{
 
 body {
   color: #606468;
-  font: 87.5%/1.5em "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;;
+  font: 1em/1em "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;;
   margin: 0;
+  background: #3E3A40;
 }
 
 
@@ -185,9 +280,9 @@ p {
 }
 
 #login form span {
-  background-color: #363b41;
+  background-color: #3E3A40;
   border-radius: 3px 0px 0px 3px;
-  color: #606468;
+  color: #BFC1C2;
   display: block;
   float: left;
   height: 50px;
@@ -201,16 +296,18 @@ p {
 }
 
 #login form input[type="text"], #login form input[type="password"] {
-  background-color: #3b4148;
+  background-color: #4A484C;
   border-radius: 0px 3px 3px 0px;
   color: #F9F5E8;
   margin-bottom: 1em;
   padding: 0 16px;
   width: 230px;
+  border-color: #4D4B4D;
 }
 
 #login form input[type="submit"], #login form div.register-button {
   border-radius: 3px;
+  font-size: 15px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   background-color: #9E1380;
@@ -219,27 +316,37 @@ p {
   margin-bottom: 1em;
   text-transform: uppercase;
   width: 280px;
+  transition: all 300ms ease-in-out;
+  -webkit-transition: all 300ms ease-in-out;
 }
 
 #login form div.register-button {
   height: 50px;
   text-align: center;
   padding-top: 15px;
+  transition: all 300ms ease-in-out;
+  -webkit-transition: all 300ms ease-in-out;
+  cursor: pointer;
 }
 
 div.forgot-pw {
   float: right;
+  padding: 0 0 10px;
+  transition: all 300ms ease-in-out;
+  -webkit-transition: all 300ms ease-in-out;
 }
 div.forgot-pw:hover {
   color: #A72A8C;
+  cursor: pointer;
+
 }
 
 #login form input[type="submit"]:hover {
-  background-color: #A72A8C;
+  background-color: #e748c5;
 }
 
 #login form div.register-button:hover {
-  background-color: #A72A8C;
+  background-color: #e748c5;
 }
 
 #login > p {
@@ -250,7 +357,33 @@ div.forgot-pw:hover {
   padding-left: 5px;
 }
 
-fieldset {
-  border-color: #9E1380;
+fieldset, .fotd fieldset .panel {
+  border: none;
   margin: 20px;
+  background-color: #29252B;
+
+}
+.fotd fieldset {
+  background: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ShowAll Image Grid */
+.faces {
+  display:inline-block;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+}
+.faces img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: auto;
+  width: 100%;
+  -webkit-transform: translate(-50%,-50%) scale(1.5);
+  -ms-transform: translate(-50%,-50%) scale(1.5);
+  transform: translate(-50%,-50%) scale(1.5);
 }

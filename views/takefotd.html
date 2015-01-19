@@ -1,86 +1,78 @@
-<section>
-
-
-  <div class" row">
-    <video id="video"></video>
-    <canvas id="canvas"></canvas>
-    <img id="photo" style='display:none'/>
-  </div>
-  <div class="row">
-    <button ng-click="makeupCtrl.takePhoto()" class="takePic button">TAKE PHOTO</button>
-
-  </div>
-
-
-  <form class="makeupForm"  ng-submit="makeupCtrl.addMakeupInfo()">
-  <div class="thumbnail">
-    <img ng-hide="makeupCtrl.files" src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image">
-    <img ng-show="makeupCtrl.files[0].dataUrl" ng-src="{{makeupCtrl.files[0].dataUrl}}">
-  </div>
-
-    <input  type="file"
-    ng-model="makeupCtrl.files"
-    ng-file-select
-    ng-file-change="makeupCtrl.fileSelected()"
-    accept="image/*">
+<section class="fotd">
 
 
 
-<fieldset class="large-4 medium-4 column ">
-
-    <div class="row">
-        <label>Brand
-          <input type="text" ng-model="makeupCtrl.newMakeup.brand">
-        </label>
-
-    </div>
-
-    <div class="row">
-      <label> Product Name
-        <input  type="text" ng-model="makeupCtrl.newMakeup.productName">
-      </label>
-    </div>
-
-    <div class="row">
-      <label>Color
-        <input  type="text" ng-model="makeupCtrl.newMakeup.color">
-      </label>
-    </div>
-
-</fieldset>
-
-<fieldset class="large-4 medium-4 column">
-
-  <div class="row">
-    <label>Brand
-      <input type="text" ng-model="makeupCtrl.newMakeup.brand">
-    </label>
-
-  </div>
-
-  <div class="row">
-    <label> Product Name
-      <input  type="text" ng-model="makeupCtrl.newMakeup.productName">
-    </label>
-  </div>
-
-  <div class="row">
-    <label>Color
-      <input  type="text" ng-model="makeupCtrl.newMakeup.color">
-    </label>
-  </div>
-
-</fieldset>
-
-
-
-
-    <!-- <div class="row">
-      <div class="large-5 columns" >
-        <button ng-click="" class="button addMakeup">ADD ANOTHER PRODUCT</button>
+<div class="row">
+  <div class="webcamContainer large-6 column">
+      <video id="video"></video>
+      <canvas id="canvas"></canvas>
+      <img id="photo" style='display:none'/>
+      <div>
+        <button ng-click="makeupCtrl.takePhoto()" class="takePic button">TAKE PHOTO</button>
       </div>
-    </div> -->
-    <div class="row">
+  </div>
+
+  <div class="imageContainer large-6 column">
+    <div class="thumbnail large-12 columns">
+      <img ng-hide="makeupCtrl.files" src="http://www.placehold.it/320x240/535055/AAAAAA&amp;text=no+image">
+      <img class="upload-img-preview" ng-show="makeupCtrl.files[0].dataUrl" ng-src="{{makeupCtrl.files[0].dataUrl}}">
+    </div>
+    <div class="imageUpload">
+      <span>Upload Photo</span>
+      <br>
+      <input class="upload" type="file"
+      ng-model="makeupCtrl.files"
+      ng-file-select
+      ng-file-change="makeupCtrl.fileSelected()"
+      accept="image/*">
+  </div>
+</div>
+</div>
+
+    <form class="makeupForm row"  ng-submit="makeupCtrl.addMakeupInfo()">
+
+      <fieldset class="large-6 column">
+        <div class="panel">
+
+          <label>Brand
+            <input type="text" ng-model="makeupCtrl.newMakeup.brand01">
+          </label>
+
+          <label> Product Name
+            <input  type="text" ng-model="makeupCtrl.newMakeup.productName01">
+          </label>
+
+          <label>Color
+            <input  type="text" ng-model="makeupCtrl.newMakeup.color01">
+          </label>
+
+        </div>
+      </fieldset>
+
+
+      <fieldset class="large-6 column">
+        <div class="panel">
+
+          <label>Brand
+            <input type="text" ng-model="makeupCtrl.newMakeup.brand02">
+          </label>
+
+          <label> Product Name
+            <input  type="text" ng-model="makeupCtrl.newMakeup.productName02">
+          </label>
+
+          <label>Color
+            <input  type="text" ng-model="makeupCtrl.newMakeup.color02">
+          </label>
+
+        </div>
+      </fieldset>
+
+
+
+
+
+    <div class="large-12 column">
       <input type="submit" class="button addMakeup"></button>
     </div>
 

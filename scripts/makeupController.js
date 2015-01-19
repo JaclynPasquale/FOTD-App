@@ -103,6 +103,7 @@
           });
         };
 
+        //converting base64 to blob
         function _b64toBlob(b64Data) {
           b64Data = b64Data.slice(b64Data.indexOf(',') + 1);
 
@@ -130,24 +131,23 @@
           return blob;
         }
 
+        //upload image file or webcam photo
         function _uploadFile(makeupId, cb){
           console.log('sent to s3')
           if (vm.files){
             var file = vm.files[0];
             upload.uploadPhoto(file, $rootScope.user.uid, makeupId , function(s3link){
-
-              var linkId = s3link ;
+              console.log("sent to s3")
+              var linkId = s3link + "/" + makeupId + ".jpg";
               cb(linkId);
               console.log(cb);
-
-
             });
           } else {
 
             var file = _b64toBlob($scope.photo);
             file.name = makeupId + ".jpg";
 
-            upload.uploadWebcam(file, $rootScope.user.uid, makeupId , function(s3link){
+            upload.uploadWebcam(file, $rootScope.user.uid, makeupId, function(s3link){
 
               console.log('sent to s3')
               var linkId = s3link ;
@@ -200,7 +200,7 @@
         .success(function(data, status, headers, config){
 
           console.log("upload photo")
-          cb('https://fotd-image-upload.s3.amazonaws.com/' + $rootScope.user.uid + '/' + config.file.name);
+          cb('https://fotd-image-upload.s3.amazonaws.com/' + $rootScope.user.uid);
 
         });
       };
@@ -211,7 +211,7 @@
           url: 'https://fotd-image-upload.s3.amazonaws.com',
           method: 'POST',
           data: {
-            'Content-Type' : "image/png",
+            'Content-Type' : "img/jpg",
             key: userId + '/' + photoId + '.jpg',
             acl: 'public-read',
             awsaccesskeyid: 'AKIAI6TMM3TOLI4KFABQ',

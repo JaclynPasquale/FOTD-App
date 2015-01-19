@@ -2862,10 +2862,6 @@ input[type="radio"] + label {
   margin-bottom: 0;
   vertical-align: baseline; }
 
-/* Normalize file input width */
-input[type="file"] {
-  width: 100%; }
-
 /* HTML5 Number spinners settings */
 /* We add basic fieldset styling */
 fieldset {
