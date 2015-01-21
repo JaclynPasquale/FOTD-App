@@ -12,10 +12,24 @@ section.login {
 }
 
 section.fotd, section.showall {
+  background: url(../images/triangles2000.jpg) center center fixed;
+  background-repeat: repeat-y;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 1000%;
+  position: absolute;
+  width: 100%;
+}
+
+.grey-background {
   background-color: #3E3A40;
   text-align: center;
   margin: 78px auto 0;
+  max-width: 1100px;
 }
+
 .webcamContainer, .imageContainer {
   margin-top:16px;
   position:relative;
@@ -40,7 +54,7 @@ section.fotd, section.showall {
   margin-top: -240px;
 }
 
-
+/*
 .loggedinBkgrnd {
   background: url(../images/purple-triangles.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -56,7 +70,7 @@ section.fotd, section.showall {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-}
+}*/
 
 label {
   color: #fff;
@@ -71,6 +85,7 @@ nav.top-bar {
   width: 100%;
   top: 0;
   z-index: 9999;
+  margin-bottom: 100px
 }
 
 .logo {
@@ -116,6 +131,7 @@ label {
   display: inline;
   border-radius: 3px;
   margin-top: -5px;
+  margin: 5px;
 
 }
 
@@ -193,8 +209,6 @@ background-color: #A72A8C;
 }
 
 input[type="file"]{
-
-
 }
 
 
@@ -237,7 +251,7 @@ body {
   color: #606468;
   font: 1em/1em "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;;
   margin: 0;
-  background: #3E3A40;
+  /*background: #3E3A40;*/
 }
 
 
@@ -377,6 +391,11 @@ fieldset, .fotd fieldset .panel {
   height: 200px;
   overflow: hidden;
 }
+div.faces {
+  margin: 10px;
+
+}
+
 .faces img {
   position: absolute;
   left: 50%;

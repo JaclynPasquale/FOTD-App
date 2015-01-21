@@ -1,83 +1,154 @@
 <section class="fotd">
 
+<div class="grey-background">
 
 
-<div class="row">
-  <div class="webcamContainer large-6 column">
+
+  <div class="row">
+    <div class="webcamContainer large-6 column">
       <video id="video"></video>
       <canvas id="canvas"></canvas>
       <img id="photo" style='display:none'/>
       <div>
         <button ng-click="makeupCtrl.takePhoto()" class="takePic button">TAKE PHOTO</button>
       </div>
-  </div>
-
-  <div class="imageContainer large-6 column">
-    <div class="thumbnail large-12 columns">
-      <img ng-hide="makeupCtrl.files" src="http://www.placehold.it/320x240/535055/AAAAAA&amp;text=no+image">
-      <img class="upload-img-preview" ng-show="makeupCtrl.files[0].dataUrl" ng-src="{{makeupCtrl.files[0].dataUrl}}">
     </div>
-    <div class="imageUpload">
-      <span>Upload Photo</span>
-      <br>
-      <input class="upload" type="file"
-      ng-model="makeupCtrl.files"
-      ng-file-select
-      ng-file-change="makeupCtrl.fileSelected()"
-      accept="image/*">
+
+    <div class="imageContainer large-6 column">
+      <div class="thumbnail large-12 columns">
+        <img ng-hide="makeupCtrl.files" src="http://www.placehold.it/320x240/535055/AAAAAA&amp;text=no+image">
+        <img class="upload-img-preview" ng-show="makeupCtrl.files[0].dataUrl" ng-src="{{makeupCtrl.files[0].dataUrl}}">
+      </div>
+      <div class="imageUpload">
+        <span>Upload Photo</span>
+        <br>
+        <input class="upload" type="file"
+        ng-model="makeupCtrl.files"
+        ng-file-select
+        ng-file-change="makeupCtrl.fileSelected()"
+        accept="image/*">
+      </div>
+    </div>
   </div>
-</div>
-</div>
 
-    <form class="makeupForm row"  ng-submit="makeupCtrl.addMakeupInfo()">
+  <form class="makeupForm row grey-background"  ng-submit="makeupCtrl.addMakeupInfo()">
 
-      <fieldset class="large-6 column">
-        <div class="panel">
+    <fieldset class="large-6 column">
+      <div class="panel">
 
-          <label>Brand
-            <input type="text" ng-model="makeupCtrl.newMakeup.brand01">
-          </label>
+        <label>Brand
+          <input type="text" ng-model="makeupCtrl.newMakeup.products.product01.brand">
+        </label>
 
-          <label> Product Name
-            <input  type="text" ng-model="makeupCtrl.newMakeup.productName01">
-          </label>
+        <label> Product Name
+          <input  type="text" ng-model="makeupCtrl.newMakeup.products.product01.productName">
+        </label>
 
-          <label>Color
-            <input  type="text" ng-model="makeupCtrl.newMakeup.color01">
-          </label>
+        <label>Color
+          <input  type="text" ng-model="makeupCtrl.newMakeup.products.product01.color">
+        </label>
 
-        </div>
-      </fieldset>
+      </div>
+    </fieldset>
 
 
-      <fieldset class="large-6 column">
-        <div class="panel">
+    <fieldset class="large-6 column">
+      <div class="panel">
 
-          <label>Brand
-            <input type="text" ng-model="makeupCtrl.newMakeup.brand02">
-          </label>
+        <label>Brand
+          <input type="text" ng-model="makeupCtrl.newMakeup.products.product02.brand">
+        </label>
 
-          <label> Product Name
-            <input  type="text" ng-model="makeupCtrl.newMakeup.productName02">
-          </label>
+        <label> Product Name
+          <input  type="text" ng-model="makeupCtrl.newMakeup.products.product02.productName">
+        </label>
 
-          <label>Color
-            <input  type="text" ng-model="makeupCtrl.newMakeup.color02">
-          </label>
+        <label>Color
+          <input  type="text" ng-model="makeupCtrl.newMakeup.products.product02.color">
+        </label>
 
-        </div>
-      </fieldset>
+      </div>
+    </fieldset>
 
+    <fieldset class="large-6 column">
+      <div class="panel">
 
+        <label>Brand
+          <input type="text" ng-model="makeupCtrl.newMakeup.products.product03.brand">
+        </label>
 
+        <label> Product Name
+          <input  type="text" ng-model="makeupCtrl.newMakeup.products.product03.productName">
+        </label>
+
+        <label>Color
+          <input  type="text" ng-model="makeupCtrl.newMakeup.products.product03.color">
+        </label>
+
+      </div>
+    </fieldset>
+
+    <fieldset class="large-6 column">
+      <div class="panel">
+
+        <label>Brand
+          <input type="text" ng-model="makeupCtrl.newMakeup.products.product04.brand">
+        </label>
+
+        <label> Product Name
+          <input  type="text" ng-model="makeupCtrl.newMakeup.products.product04.productName">
+        </label>
+
+        <label>Color
+          <input  type="text" ng-model="makeupCtrl.newMakeup.products.product04.color">
+        </label>
+
+      </div>
+    </fieldset>
+
+    <fieldset class="large-6 column">
+      <div class="panel">
+
+        <label>Brand
+          <input type="text" ng-model="makeupCtrl.newMakeup.products.product05.brand">
+        </label>
+
+        <label> Product Name
+          <input  type="text" ng-model="makeupCtrl.newMakeup.products.product05.productName">
+        </label>
+
+        <label>Color
+          <input  type="text" ng-model="makeupCtrl.newMakeup.products.product05.color">
+        </label>
+
+      </div>
+    </fieldset>
+
+    <fieldset class="large-6 column">
+      <div class="panel">
+
+        <label>Brand
+          <input type="text" ng-model="makeupCtrl.newMakeup.products.product06.brand">
+        </label>
+
+        <label> Product Name
+          <input  type="text" ng-model="makeupCtrl.newMakeup.products.product06.productName">
+        </label>
+
+        <label>Color
+          <input  type="text" ng-model="makeupCtrl.newMakeup.products.product06.color">
+        </label>
+
+      </div>
+    </fieldset>
 
 
     <div class="large-12 column">
       <input type="submit" class="button addMakeup"></button>
     </div>
 
-    </form >
-    </div>
+  </form >
+</div>
 
 
 
