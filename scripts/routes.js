@@ -13,13 +13,13 @@ angular.module("fotdApp")
     controllerAs: "makeupCtrl",
     private: "true"
   })
-  .when("/showFOTD", {
+  .when("/showFOTDs", {
     templateUrl: "views/showAll.html",
     controller: "makeupListController",
     controllerAs: "makeupListCtrl",
     private: "true"
   })
-  .when("/showFOTD/:id", {
+  .when("/allphotos/:id", {
     templateUrl: "views/showEdit.html",
     controller: "makeupListController",
     controllerAs: "makeupListCtrl",

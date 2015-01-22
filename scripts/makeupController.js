@@ -84,7 +84,7 @@
           $http.put(FIREBASE_URL + "users/" + $rootScope.user.uid + "/makeup/" + data.name  + "/fotdImage" + '/.json?auth=' + $rootScope.user.token, fotdImage )
           .success(function(){
             console.log("success image to firebase")
-            $location.path('/showFOTD');
+            $location.path('/showFOTDs');
           }).error(function(err){
             console.log("nope")
           })
