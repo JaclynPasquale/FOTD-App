@@ -1,8 +1,40 @@
 <section class="showall">
   <div class="grey-background">
-  <div class="faces" ng-repeat="(makeupId, makeup) in makeupListCtrl.makeup">
-    <img src="{{makeup.fotdImage[0]}}">
-  </div>
-</div>
 
+    <div>
+
+      <div class="facedates" ng-repeat="(makeupId, makeup) in makeupListCtrl.makeup">
+        <div class="faces">
+          <img src="{{makeup.fotdImage[0]}}">
+        </div>
+        <div class="dates">
+          <p class="date">{{makeup.date | date}}</p>
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+  <!-- <div ng-repeat="(makeupId, makeup) in makeupListCtrl.makeup"> -->
+  <!-- <p class="date">{{makeup.date | date}}</p> -->
+
+  <!-- <table>
+
+  <div ng-repeat="(makeupId, makeup) in makeupListCtrl.makeup">
+  <td class="faces">
+  <img src="{{makeup.fotdImage[0]}}">
+</div>
+</tr>
+<tr>
+<td>
+<p class="date">{{makeup.date | date}}</p>
+</td>
+</tr>
+
+</table> -->
+
+</div>
 </section>
