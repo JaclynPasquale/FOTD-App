@@ -16,72 +16,66 @@
 
 </head>
 <body>
-      <nav class="top-bar" data-topbar role="navigation" >
-        <div class="row">
+  <nav class="top-bar" data-topbar role="navigation" >
+    <div class="row">
 
-          <div class="large-1 columns large-offset-1">
-            <img class="logo" src="../images/FOTD-green.png">
-          </div>
-          <div class="large-6 columns">
-            <h3 class="tagline">Face of the Day</h3>
-          </div>
-          <div class="large-2 columns logout">
-            <a href="/#/logout" class="button logout" ng-show="user">Logout</a>
-            <a href="/#/showFOTD" class="button logout" ng-show="user">All FOTDs</a>
-            <!-- <a href="/#/showEdit" class="button logout" ng-show="user">All FOTDs</a> -->
-          </div>
+      <div class="large-1 columns large-offset-1">
+        <img class="logo" src="../images/FOTD-green.png">
+      </div>
+      <div class="large-6 columns">
+        <h3 class="tagline">Face of the Day</h3>
+      </div>
+      <div class="large-3 columns logout">
 
-        </div>
-      </nav>
-    <div ng-view></div>
+        <a href="/#/logout" class="button logout" ng-show="user">Logout</a>
 
-  </div>
-  <script src="bower_components/alertify.js/lib/alertify.min.js"></script>
-  <script src="bower_components/firebase/firebase.js"></script>
-  <script src="bower_components/jquery/dist/jquery.min.js"></script>
-  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="bower_components/angular/angular.min.js"></script>
-  <script src="bower_components/angular-route/angular-route.min.js"></script>
-  <script src="bower_components/webcam-directive/dist/webcam.min.js"></script>
-  <script src="bower_components/ng-file-upload/angular-file-upload.min.js"></script>
 
-  <script src="scripts/main.js"></script>
-  <script src="scripts/constant.js"></script>
-  <script src="scripts/routes.js"></script>
 
-  <script src="scripts/auth/authRoutes.js"></script>
-  <script src="scripts/auth/authController.js"></script>
-  <script src="scripts/auth/authFactory.js"></script>
 
-  <script src="scripts/makeupController.js"></script>
-  <scrip src="scripts/camFactory.js"></scrip>
-  <script src="scripts/makeupFactory.js"></script>
-  <script src="scripts/webcamController.js"></script>
-  <script src="scripts/fotdListController.js"></script>
+        <a href="#" data-dropdown="drop" class="button  logout">
+          <i class="fa fa-bars"></i></a>
+        <ul id="drop" data-dropdown-content class="f-dropdown">
+          <li><a href="/#/makeup">Take FOTD</a></li>
+          <li><a href="/#/showFOTD">Show All FOTDs</a></li>
+        </ul>
 
-<script>
 
-// $on('$routeChangeStart', function(next, current) {
-//   ref = new Firebase("https://fotd-app.firebaseio.com/")
-//   if (ref.getAuth() === true){
-//     $("body").addClass("loggedinBkgrnd")
-//   } else if (ref.getAuth() === false) {
-//     $("body").addClass("loginBkgrnd")
-//   }
-// });
+      </div>
 
-//
-// $(document).ready(function(){
-//   ref = new Firebase("https://fotd-app.firebaseio.com/")
-//   if (ref.getAuth() === true){
-//     $("body").addClass("loggedinBkgrnd")
-//   } else if (ref.getAuth() === false) {
-//     $("body").addClass("loginBkgrnd")
-//   }
-//
-// });
+    </div>
+  </nav>
+  <div ng-view></div>
 
-</script>
+</div>
+<script src="bower_components/alertify.js/lib/alertify.min.js"></script>
+<script src="bower_components/firebase/firebase.js"></script>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-route/angular-route.min.js"></script>
+<script src="bower_components/webcam-directive/dist/webcam.min.js"></script>
+<script src="bower_components/ng-file-upload/angular-file-upload.min.js"></script>
+<script src="bower_components/foundation/js/vendor/jquery.js"></script>
+<script src="bower_components/foundation/js/foundation.min.js"></script>
+<script src="bower_components/foundation/js/foundation/foundation.dropdown.js"></script>
+<script src="bower_components/foundation/js/vendor/modernizr.js"></script>
+<script src="bower_components/foundation/js/foundation/foundation.topbar.js"></script>
+<script>$(document).foundation();</script>
+
+
+<script src="scripts/main.js"></script>
+<script src="scripts/constant.js"></script>
+<script src="scripts/routes.js"></script>
+
+<script src="scripts/auth/authRoutes.js"></script>
+<script src="scripts/auth/authController.js"></script>
+<script src="scripts/auth/authFactory.js"></script>
+
+<script src="scripts/makeupController.js"></script>
+<scrip src="scripts/camFactory.js"></scrip>
+<script src="scripts/makeupFactory.js"></script>
+<script src="scripts/webcamController.js"></script>
+<script src="scripts/fotdListController.js"></script>
 
 </body>
 </html>
