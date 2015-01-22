@@ -13,7 +13,7 @@ angular.module("fotdApp")
     controllerAs: "makeupCtrl",
     private: "true"
   })
-  .when("/showFOTD", {
+  .when("/showFOTDs", {
     templateUrl: "views/showAll.html",
     controller: "makeupListController",
     controllerAs: "makeupListCtrl",
