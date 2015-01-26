@@ -18,16 +18,15 @@ section.fotd, section.showall {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 1000%;
-  position: absolute;
-  width: 100%;
+  height: 400%;
+  
 }
 
 .grey-background {
   background-color: #3E3A40;
   text-align: center;
   margin: 78px auto 0;
-  max-width: 1100px;
+  max-width: 1000px;
 }
 
 .webcamContainer, .imageContainer {
@@ -85,7 +84,7 @@ nav.top-bar {
   width: 100%;
   top: 0;
   z-index: 9999;
-  margin-bottom: 100px
+  /*margin-bottom: 100px*/
 }
 
 .logo {
@@ -131,9 +130,9 @@ label {
   display: inline;
   border-radius: 3px;
   margin-top: -5px;
-  margin: 5px;
-
+  margin-right: 8px;
 }
+
 
 .upload-img-preview {
   max-width: 320px;

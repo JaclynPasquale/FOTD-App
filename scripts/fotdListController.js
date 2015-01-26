@@ -15,7 +15,16 @@
     });
   }
 
-  getMakeup();
+   getMakeup();
+   
+  // var imgDate = FIREBASE_URL + "users/" + $rootScope.user.uid + "/makeup/date/.json?auth=" + $rootScope.user.token
+  // var now = new Date();
+  // var newNow = Date.now
+  // var newNow = Date.now();
+  // var now = moment();
+  //
+  // moment({{imgDate}}).fromNow();
+
 
 });
 })();

@@ -1,18 +1,18 @@
 <section>
   <img src="{{makeup.fotdImage[0]}}">
 
-  <div>
+  <div ng-repeat="(makeupId, makeup) in makeupListCtrl.makeup">
     <p>
-      {{makeup.brand}}
+      {{makeup.products.brand}}
     </p>
     <p>
-      {{makeup.color}}
+      {{makeup.products.color}}
     </p>
     <p>
-      {{makeup.productName}}
+      {{makeup.products.productName}}
     </p>
     <p>
-      {{makeup.date}}
+      {{makeup.products.date}}
     </p>
 
   </div>
