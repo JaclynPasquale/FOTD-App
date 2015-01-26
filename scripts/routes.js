@@ -19,7 +19,7 @@ angular.module("fotdApp")
     controllerAs: "makeupListCtrl",
     private: "true"
   })
-  .when("/showFOTD/:id", {
+  .when("/:id", {
     templateUrl: "views/showEdit.html",
     controller: "makeupListController",
     controllerAs: "makeupListCtrl",

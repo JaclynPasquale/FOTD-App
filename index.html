@@ -16,29 +16,21 @@
 
 </head>
 <body>
-  <nav class="top-bar" data-topbar role="navigation" >
+  <nav data-topbar role="navigation" >
     <div class="row">
 
-      <div class="small-1  columns large-offset-1 ">
+      <div class="small-6 columns">
         <img class="logo" src="../images/FOTD-green.png">
+        <img ng-src="../images/fotd-tagline.png" class="tagline">
       </div>
-      <div class="small-4 hide-for-small columns">
-        <h3 class="tagline">Face of the Day</h3>
-      </div>
-      <div class="small-4 columns">
-
+      <div class="small-6 columns nav-buttons">
         <a href="/#/logout" class="button logout" ng-show="user">Logout</a>
-
-
-
-
-        <a ng-show="user" data-dropdown="drop" class="button  logout">
+        <a ng-show="user" data-dropdown="drop" class="button">
           <i class="fa fa-bars"></i></a>
         <ul id="drop" data-dropdown-content class="f-dropdown">
           <li><a href="/#/makeup">Take FOTD</a></li>
           <li><a href="/#/showFOTDs">Show All FOTDs</a></li>
         </ul>
-
 
       </div>
 

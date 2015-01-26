@@ -12,14 +12,17 @@ section.login {
 }
 
 section.fotd, section.showall {
-  background: url(../images/triangles2000.jpg) center center fixed;
+  background: url(../images/triangles2001.jpg) center center fixed;
   background-repeat: repeat-y;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 400%;
-  
+  min-height: 1080px;
+  width: 100%;
+  position: absolute;
+
+
 }
 
 .grey-background {
@@ -34,9 +37,12 @@ section.fotd, section.showall {
   position:relative;
 }
 .webcamContainer::after {
-  content: "OR";
+  content: "";
+  background: url("../images/OR.png");
+  width: 75px;
+  height: 44px;
   position: absolute;
-  right: -24px;
+  right: -34px;
   top: 100px;
   font-size: 36px;
 }
@@ -76,7 +82,7 @@ label {
 }
 
 
-nav.top-bar {
+nav {
   background-color: #29252B;
   color: #d9d628;
   height: 78px;
@@ -84,7 +90,6 @@ nav.top-bar {
   width: 100%;
   top: 0;
   z-index: 9999;
-  /*margin-bottom: 100px*/
 }
 
 .logo {
@@ -109,11 +114,8 @@ label {
 }
 .tagline {
   color: #F9F5E8;
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 300;
-  font-style: italic;
-  font-size: 20px;
-  margin: 30px 0 0 25px;
+  height: 45px;
+  /*margin: 30px 0 0 25px;*/
 
 }
 .button {
@@ -124,15 +126,21 @@ label {
 
 }
 
-.top-bar .logout {
+nav .button {
   color: #D9D64A;
   padding: 10px;
-  display: inline;
+  display: inline-block;
   border-radius: 3px;
-  margin-top: -5px;
+  margin-top: 20px;
   margin-right: 8px;
 }
 
+.f-dropdown li a {
+  text-align: left;
+}
+.nav-buttons {
+  text-align: right;
+}
 
 .upload-img-preview {
   max-width: 320px;
@@ -288,8 +296,12 @@ p {
 }
 
 /* ---------- LOGIN ---------- */
+
+#login form img {
+  margin-left: 25px;
+}
 #login {
-  width: 280px;
+  margin-top: 95px;
 }
 
 #login form span {

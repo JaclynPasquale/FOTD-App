@@ -1,19 +1,19 @@
 <section>
   <img src="{{makeup.fotdImage[0]}}">
 
-  <div ng-repeat="(makeupId, makeup) in makeupListCtrl.makeup">
-    <p>
-      {{makeup.products.brand}}
-    </p>
-    <p>
-      {{makeup.products.color}}
-    </p>
-    <p>
-      {{makeup.products.productName}}
-    </p>
-    <p>
-      {{makeup.products.date}}
-    </p>
+  <ul ng-repeat="(makeupId, makeup) in makeupListCtrl.makeup">
+    <li>
+      {{makeup.products.product01.brand}}
+    </li>
+    <li>
+      {{makeup.products.product01.color}}
+    </li>
+    <li>
+      {{makeup.products.product01.productName}}
+    </li>
+    <li>
+      {{makeup.products.product01.date}}
+    </li>
 
-  </div>
+  </ul>
 </section>

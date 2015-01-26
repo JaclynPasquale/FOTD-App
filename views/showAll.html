@@ -5,7 +5,7 @@
 
       <div class="facedates" ng-repeat="(makeupId, makeup) in makeupListCtrl.makeup">
         <div class="faces">
-          <img src="{{makeup.fotdImage[0]}}">
+          <a href="/#/{{makeupId}}"><img src="{{makeup.fotdImage[0]}}"></a>
         </div>
         <div class="dates">
           <p class="date">{{makeup.date | date}}</p>
