@@ -1,23 +1,28 @@
 <section class="fotd">
   <div class="grey-background">
-    <div>
-      <img ng-src="{{makeupListCtrl.selectedMakeup.fotdImage[0]}}"/>
+
+      <img class="show-img" ng-src="{{makeupListCtrl.selectedMakeup.fotdImage[0]}}"/>
+
+    <div class="show-date">
+      {{makeupListCtrl.selectedMakeup.date | date}}
     </div>
-    <div>
-      {{makeupListCtrl.selectedMakeup.date}}
+    <a href="/#/makeup/{{makeupId}}/edit" class="edit">Edit</a>
+    <div class="row">
+      <div class="large-2 column">
+      <ul ng-repeat="(productId, product) in makeupListCtrl.selectedMakeup.products">
+        <li>
+          {{product.color}}
+        </li>
+        <li>
+          {{product.productName}}
+        </li>
+        <li>
+          {{product.brand}}
+        </li>
+      </ul>
     </div>
-    <a href="/#/makeup/{{makeupId}}/edit" class="btn btn-info">Edit</a>
-    <ul ng-repeat="(productId, product) in makeupListCtrl.selectedMakeup.products">
-      <li>
-        {{product.color}}
-      </li>
-      <li>
-        {{product.productName}}
-      </li>
-      <li>
-        {{product.brand}}
-      </li>
-    </ul>
+  </div>
+
   </div>
 
 </section>

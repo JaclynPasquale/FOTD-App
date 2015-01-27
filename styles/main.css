@@ -168,8 +168,9 @@ nav .button {
   filter: alpha(opacity=0);
 }
 
-.pickFile, .takePic, input.addMakeup {
+.pickFile, .takePic, .edit, input.addMakeup {
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #fff;
   border-radius: 3px;
   background-color: #9E1380;
   font-size: 13px;
@@ -188,8 +189,9 @@ input.addMakeup {
 }
 
 
-input.addMakeup:hover, .takePic:hover, .pickFile:hover {
+input.addMakeup:hover, .takePic:hover, .pickFile:hover, .edit:hover {
 background-color: #A72A8C;
+color:#fff;
 }
 
 input[type="file"]{
@@ -274,7 +276,8 @@ p {
 /* ---------- LOGIN ---------- */
 
 #login form img {
-  margin-left: 25px;
+  margin: 20px 0 10px 25px;
+  width: 350px;
 }
 #login {
   margin-top: 95px;
@@ -330,13 +333,14 @@ p {
   cursor: pointer;
 }
 
-div.forgot-pw {
+.forgot-pw {
   float: right;
+  color: #D9D64A;
   padding: 0 0 10px;
   transition: all 300ms ease-in-out;
   -webkit-transition: all 300ms ease-in-out;
 }
-div.forgot-pw:hover {
+.forgot-pw:hover {
   color: #A72A8C;
   cursor: pointer;
 
@@ -403,4 +407,34 @@ fieldset, .fotd fieldset .panel {
 .date {
   display:inline-block;
   position: relative;
+}
+/* show page */
+ul li {
+  color: #fff;
+  list-style: none;
+  text-align: left;
+
+}
+
+.show-img {
+  margin: 25px 20px 0px 20px;
+  max-width: 400px;
+}
+
+.edit {
+  clear: both;
+}
+
+.show-date {
+  margin: 20px;
+  display: block;
+  clear: both;
+}
+
+
+
+@media (max-width: 700px) {
+  .tagline {
+    display: none;
+  }
 }
