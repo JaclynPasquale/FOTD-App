@@ -6,7 +6,6 @@ angular.module("fotdApp")
   $routeProvider
 
 
-
   .when("/makeup", {
     templateUrl: "views/takefotd.html",
     controller: "MakeupController",
@@ -20,17 +19,16 @@ angular.module("fotdApp")
     private: "true"
   })
   .when("/:id", {
-    templateUrl: "views/showEdit.html",
+    templateUrl: "views/show.html",
     controller: "makeupListController",
     controllerAs: "makeupListCtrl",
     private: "true"
   })
-
-
-  .otherwise({ redirectTo: "/" });
-
+  .when("/:id/edit", {
+    templateUrl: "views/edit.html",
+    controller: "makeupListController",
+    controllerAs: "makeupListCtrl",
+    private: "true"
+  })
 })
-
-
-
 }());

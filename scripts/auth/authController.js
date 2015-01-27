@@ -21,24 +21,6 @@
         $scope.$apply();
       });
     };
-
-    // vm.backgroundChange = function(){
-    //   authFactory.backgroundChange(authData)
-    //
-    // }
-
-    backgroundChange = function() {
-      $scope.$on('$routeChangeStart', function(next, current) {
-
-        if (ref.getAuth() === true){
-          $("body").addClass("loggedinBkgrnd")
-        } else if (ref.getAuth() === false) {
-          $("body").addClass("loginBkgrnd")
-        }
-      });
-    }
-
-
     vm.register = function(){
       authFactory.register(vm.email, vm.password, function(){
         vm.login();
@@ -49,9 +31,10 @@
       authFactory.resetPassword(vm.email);
     };
   })
+
   .controller('LogoutController', function($scope, $location, authFactory){
     authFactory.logout(function(){
-      $location.path('/login');
+      $location.path('/');
       $scope.$apply();
     });
   })

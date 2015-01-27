@@ -1,56 +1,38 @@
-;(function() {
-
-  angular.module("fotdApp")
-
-  .factory("authFactory", function($rootScope, $location, FIREBASE_URL, $route) {
+;(function(){
+  angular.module('fotdApp')
+  .factory('authFactory', function($rootScope, $location, FIREBASE_URL){
     var factory = {},
-    ref = new Firebase(FIREBASE_URL)
-
-
+    ref = new Firebase(FIREBASE_URL);
 
     $rootScope.user = ref.getAuth();
 
-    factory.requireLogin = function() {
+    factory.requireLogin = function(){
       if (!_isLoggedIn()) {
-        $location.path("/login");
+        $location.path('/#/login');
       } else if (_hasTemporaryPassword()) {
-        $location.path("/changepassword");
+        $location.path('/#/changepassword');
       }
     };
 
-    factory.disallowLogin = function() {
+    factory.disallowLogin = function(){
       if (_isLoggedIn()) {
-        $location.path("/makeup");
+        $location.path('/#/makeup');
       }
     };
 
-    function _isLoggedIn() {
+    function _isLoggedIn(){
       return Boolean(ref.getAuth());
     }
 
-    // factory.backgroundChange = function() {
-    //   $scope.on('$routeChangeStart', function(next, current) {
-    //
-    //     if (ref.getAuth() === true){
-    //       $("body").addClass("loggedinBkgrnd")
-    //     } else if (ref.getAuth() === false) {
-    //       $("body").addClass("loginBkgrnd")
-    //     }
-    //   });
-    // }
-
-
-
-
-    function _hasTemporaryPassword() {
+    function _hasTemporaryPassword(){
       return ref.getAuth().password.isTemporaryPassword;
     }
 
-    factory.changePassword = function(oldPassword, newPassword, cb) {
+    factory.changePassword = function(oldPass, newPass, cb){
       ref.changePassword({
         email       : ref.getAuth().password.email,
-        oldPassword : oldPassword,
-        newPassword : newPassword,
+        oldPassword : oldPass,
+        newPassword : newPass,
       }, function(error) {
         if (error === null) {
           alertify.success("Password changed successfully");
@@ -62,11 +44,10 @@
     );
   };
 
-
-    factory.login = function(email, password, cb) {
+    factory.login = function(email, pass, cb){
       ref.authWithPassword({
-        email: email,
-        password: password
+        email    : email,
+        password : pass
       }, function(error, authData) {
         if (error === null) {
           alertify.success("User logged in successfully");
@@ -82,10 +63,20 @@
     );
   };
 
-  factory.register = function(email, password, cb) {
+  factory.logout = function(cb) {
+    ref.unauth(function() {
+      $rootScope.user = null;
+      cb();
+      console.log("User is logged out");
+      alertify.success("User is logged out");
+    });
+  };
+
+
+  factory.register = function(email, pass, cb){
     ref.createUser({
-      email: email,
-      password: password
+      email    : email,
+      password : pass
     }, function(error, authData) {
       if (error === null) {
         alertify.success("User created successfully");
@@ -99,36 +90,23 @@
   );
 }
 
-factory.logout = function(cb) {
-  ref.unauth(function() {
-    $rootScope.user = null;
-    cb();
-    console.log("User is logged out");
-    alertify.success("User is logged out");
-  });
-};
-
-factory.resetPassword = function(email){
-  ref.resetPassword({
-    email : email
-  }, function(error) {
-    if (error === null) {
-      console.log('Password reset email sent successfully');
-      alertify.success("Password reset email sent successfully");
-    } else {
-      console.log('Error sending password reset email:', error);
-      alertify.error("Error sending password reset email");
+  factory.resetPassword = function(email){
+    ref.resetPassword({
+      email : email
+    }, function(error) {
+      if (error === null) {
+        console.log('Password reset email sent successfully');
+        alertify.success("Password reset email sent successfully");
+      } else {
+        console.log('Error sending password reset email:', error);
+        alertify.error("Error sending password reset email");
+      }
     }
-  }
-);
+  );
 };
-
-
-
 
 
 return factory;
-
 })
 
-})();
+}());

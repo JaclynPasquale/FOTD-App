@@ -1,0 +1,23 @@
+<section class="fotd">
+  <div class="grey-background">
+    <div>
+      <img ng-src="{{makeupListCtrl.selectedMakeup.fotdImage[0]}}"/>
+    </div>
+    <div>
+      {{makeupListCtrl.selectedMakeup.date}}
+    </div>
+    <a href="/#/makeup/{{makeupId}}/edit" class="btn btn-info">Edit</a>
+    <ul ng-repeat="(productId, product) in makeupListCtrl.selectedMakeup.products">
+      <li>
+        {{product.color}}
+      </li>
+      <li>
+        {{product.productName}}
+      </li>
+      <li>
+        {{product.brand}}
+      </li>
+    </ul>
+  </div>
+
+</section>

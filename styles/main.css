@@ -21,8 +21,6 @@ section.fotd, section.showall {
   min-height: 1080px;
   width: 100%;
   position: absolute;
-
-
 }
 
 .grey-background {
@@ -59,28 +57,9 @@ section.fotd, section.showall {
   margin-top: -240px;
 }
 
-/*
-.loggedinBkgrnd {
-  background: url(../images/purple-triangles.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-
-}
-
-.loginBkgrnd {
-  background: url(../images/girl_img.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}*/
-
-label {
+/*label {
   color: #fff;
-}
-
+}*/
 
 nav {
   background-color: #29252B;
@@ -123,7 +102,6 @@ label {
   padding: 8px;
   background-color:#48414c;
   color: #FFF;
-
 }
 
 nav .button {
@@ -145,7 +123,6 @@ nav .button {
 .upload-img-preview {
   max-width: 320px;
 }
-
 
 .imageUpload {
   color:#fff;
@@ -260,7 +237,6 @@ body {
   margin: 0;
   /*background: #3E3A40;*/
 }
-
 
 input {
   border: none;
@@ -403,10 +379,6 @@ fieldset, .fotd fieldset .panel {
   overflow: hidden;
   margin: 20px 20px 10px 20px;
 }
-/*div.faces {
-  margin: 10px;
-
-}*/
 
 .faces img {
   position: absolute;
@@ -428,13 +400,3 @@ fieldset, .fotd fieldset .panel {
   display:inline-block;
   position: relative;
 }
-/*p.date {
-  margin-top: 20px;
-  display: inline-block;
-  clear: both;
-  z-index: 999;
-}*/
-/*
-.table {display: table;}
-.row {display: table-row;}
-.cell {display: table-cell;}*/

@@ -27,47 +27,48 @@
         <a href="/#/logout" class="button logout" ng-show="user">Logout</a>
         <a ng-show="user" data-dropdown="drop" class="button">
           <i class="fa fa-bars"></i></a>
-        <ul id="drop" data-dropdown-content class="f-dropdown">
-          <li><a href="/#/makeup">Take FOTD</a></li>
-          <li><a href="/#/showFOTDs">Show All FOTDs</a></li>
-        </ul>
+          <ul id="drop" data-dropdown-content class="f-dropdown">
+            <li><a href="/#/makeup">Take FOTD</a></li>
+            <li><a href="/#/showFOTDs">Show All FOTDs</a></li>
+          </ul>
+
+        </div>
 
       </div>
+    </nav>
+    <div ng-view></div>
 
-    </div>
-  </nav>
-  <div ng-view></div>
-
-</div>
-<script src="bower_components/alertify.js/lib/alertify.min.js"></script>
-<script src="bower_components/firebase/firebase.js"></script>
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="bower_components/angular/angular.min.js"></script>
-<script src="bower_components/angular-route/angular-route.min.js"></script>
-<script src="bower_components/webcam-directive/dist/webcam.min.js"></script>
-<script src="bower_components/ng-file-upload/angular-file-upload.min.js"></script>
-<script src="bower_components/foundation/js/vendor/jquery.js"></script>
-<script src="bower_components/foundation/js/foundation.min.js"></script>
-<script src="bower_components/foundation/js/foundation/foundation.dropdown.js"></script>
-<script src="bower_components/foundation/js/vendor/modernizr.js"></script>
-<script src="bower_components/foundation/js/foundation/foundation.topbar.js"></script>
-<script>$(document).foundation();</script>
+  </div>
+  <script src="bower_components/alertify.js/lib/alertify.min.js"></script>
+  <script src="bower_components/firebase/firebase.js"></script>
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/angular-route/angular-route.min.js"></script>
+  <script src="bower_components/webcam-directive/dist/webcam.min.js"></script>
+  <script src="bower_components/ng-file-upload/angular-file-upload.min.js"></script>
+  <script src="bower_components/foundation/js/vendor/jquery.js"></script>
+  <script src="bower_components/foundation/js/foundation.min.js"></script>
+  <script src="bower_components/foundation/js/foundation/foundation.dropdown.js"></script>
+  <script src="bower_components/foundation/js/vendor/modernizr.js"></script>
+  <script src="bower_components/foundation/js/foundation/foundation.topbar.js"></script>
+  <script>$(document).foundation();</script>
 
 
-<script src="scripts/main.js"></script>
-<script src="scripts/constant.js"></script>
-<script src="scripts/routes.js"></script>
+  <script src="scripts/main.js"></script>
+  <script src="scripts/constant.js"></script>
+  <script src="scripts/mainRoutes.js"></script>
 
-<script src="scripts/auth/authRoutes.js"></script>
-<script src="scripts/auth/authController.js"></script>
-<script src="scripts/auth/authFactory.js"></script>
+  <script src="scripts/auth/authRoutes.js"></script>
+  <script src="scripts/auth/authController.js"></script>
+  <script src="scripts/auth/authFactory.js"></script>
 
-<script src="scripts/makeupController.js"></script>
-<scrip src="scripts/camFactory.js"></scrip>
-<script src="scripts/makeupFactory.js"></script>
-<script src="scripts/webcamController.js"></script>
-<script src="scripts/fotdListController.js"></script>
+  <script src="scripts/makeupController.js"></script>
+  <script src="scripts/makeupRoutes.js"></script>
+  <script src="scripts/makeupFactory.js"></script>
+  <script src="scripts/fotdListController.js"></script>
+  <script src="scripts/webcamController.js"></script>
+  <script src="scripts/camFactory.js"></script>
 
 </body>
 </html>
