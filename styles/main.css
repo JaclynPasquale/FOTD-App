@@ -380,6 +380,11 @@ fieldset, .fotd fieldset .panel {
   margin: 20px 20px 10px 20px;
 }
 
+.faces:hover {
+  -webkit-box-shadow: 3px 4px 60px 4px rgba(158,19,128,0.3);
+  -moz-box-shadow: 3px 4px 60px 4px rgba(158,19,128,0.3);
+  box-shadow: 3px 4px 60px 4px rgba(158,19,128,0.3);
+}
 .faces img {
   position: absolute;
   left: 50%;
@@ -393,7 +398,6 @@ fieldset, .fotd fieldset .panel {
 .facedates{
   display:inline-block;
   position: relative;
-
 }
 
 .date {
