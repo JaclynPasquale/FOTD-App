@@ -435,6 +435,19 @@ a.edit {
 h5 {
   display: inline-block;
   padding-right: 8px;
+  color: #606468;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+
+}
+
+li {
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  font-style: italic;
+  color: #ededed;
 }
 
 [class*="column"] + [class*="column"]:last-child {
@@ -443,16 +456,9 @@ h5 {
 
 .makeup-list {
   margin-left: 40px;
-  background-color: #48414C;
+  background-color: #29252B;
   width: 28%;
 }
-
-.list-row {
-
-
-}
-
-
 
 @media (max-width: 700px) {
   .tagline {
