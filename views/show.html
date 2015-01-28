@@ -3,24 +3,23 @@
 
       <img class="show-img" ng-src="{{makeupListCtrl.selectedMakeup.fotdImage[0]}}"/>
 
-    <div class="show-date">
+    <div class="show-date ">
       {{makeupListCtrl.selectedMakeup.date | date}}
     </div>
-    <a href="/#/makeup/{{makeupId}}/edit" class="edit">Edit</a>
-    <div class="row">
-      <div class="large-2 column">
-      <ul ng-repeat="(productId, product) in makeupListCtrl.selectedMakeup.products">
+    <button class="edit"><a href="/#/makeup/{{makeupId}}/edit">Edit</a></button>
+    <div class="row list-row" data-equalizer>
+      <ul class="makeup-list large-3 small-8 medium-4 column" ng-repeat="(productId, product) in makeupListCtrl.selectedMakeup.products">
         <li>
-          {{product.color}}
+          <h5>Brand:</h5> {{product.brand}}
         </li>
         <li>
-          {{product.productName}}
+          <h5>Product:</h5> {{product.productName}}
         </li>
         <li>
-          {{product.brand}}
+          <h5>Color:</h5> {{product.color}}
         </li>
       </ul>
-    </div>
+
   </div>
 
   </div>

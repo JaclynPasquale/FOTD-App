@@ -18,7 +18,7 @@ section.fotd, section.showall {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  min-height: 1080px;
+  min-height: 1500px;
   width: 100%;
   position: absolute;
 }
@@ -26,12 +26,13 @@ section.fotd, section.showall {
 .grey-background {
   background-color: #3E3A40;
   text-align: center;
-  margin: 78px auto 0;
+  padding: 50px 0 50px 0;
+  margin: 40px auto 0;
   max-width: 1000px;
 }
 
 .webcamContainer, .imageContainer {
-  margin-top:16px;
+  margin-top:20px;
   position:relative;
 }
 .webcamContainer::after {
@@ -56,10 +57,6 @@ section.fotd, section.showall {
   top: -16px;
   margin-top: -240px;
 }
-
-/*label {
-  color: #fff;
-}*/
 
 nav {
   background-color: #29252B;
@@ -162,7 +159,7 @@ nav .button {
   right: 0;
   margin: 0;
   padding: 0;
-  font-size: 20px;
+  font-size: 13px;
   cursor: pointer;
   opacity: 0;
   filter: alpha(opacity=0);
@@ -179,6 +176,11 @@ nav .button {
   padding: 10px 25px;
   text-align: center;
 }
+
+.edit a {
+  color: #FFF;
+}
+
 
 input.addMakeup {
   background: #D9D64A;
@@ -209,19 +211,17 @@ input[type="file"]{
   max-width: 62.5em;
 }
 
+.large-12 input{
+  margin-bottom: 100x;
+}
+
 /* hover color on button lighter fuschia #A72A8C*/
 
-/* CSS Document */
-/* ---------- FONTAWESOME ---------- */
-/* ---------- http://fortawesome.github.com/Font-Awesome/ ---------- */
-/* ---------- http://weloveiconfonts.com/ ---------- */
 @import url(http://weloveiconfonts.com/api/?family=fontawesome);
-/* ---------- ERIC MEYER'S RESET CSS ---------- */
-/* ---------- http://meyerweb.com/eric/tools/css/reset/ ---------- */
 @import url(http://meyerweb.com/eric/tools/css/reset/reset.css);
 /* ---------- FONTAWESOME ---------- */
 
-}
+
 
 /* ---------- GENERAL ---------- */
 * {
@@ -256,10 +256,10 @@ p {
 .clearfix {
   *zoom: 1;
 }
-.clearfix:before, .clearfix:after {
+/*.clearfix:before, .clearfix:after {
   content: ' ';
-  display: table;
-}
+
+}*/
 .clearfix:after {
   clear: both;
 }
@@ -421,14 +421,35 @@ ul li {
   max-width: 400px;
 }
 
-.edit {
+a.edit {
   clear: both;
+  margin: 15px;
 }
 
 .show-date {
   margin: 20px;
   display: block;
   clear: both;
+}
+
+h5 {
+  display: inline-block;
+  padding-right: 8px;
+}
+
+[class*="column"] + [class*="column"]:last-child {
+   float: left;
+ }
+
+.makeup-list {
+  margin-left: 40px;
+  background-color: #48414C;
+  width: 28%;
+}
+
+.list-row {
+
+
 }
 
 
