@@ -2,7 +2,8 @@
   "use strict";
 
   angular.module("fotdApp")
-  .factory("makeupFactory", function(FIREBASE_URL, $rootScope, $http, $location) {
+  .factory("makeupFactory", function(FIREBASE_URL, $rootScope, $http, $location)
+  {
 
     function _fotdUrl(id) {
       if (id) {

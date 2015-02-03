@@ -7,7 +7,7 @@ angular.module("fotdApp")
 
 
   .when("/makeup", {
-    templateUrl: "views/takefotd.html",
+    templateUrl: "views/takeFotd.html",
     controller: "MakeupController",
     controllerAs: "makeupCtrl",
     private: "true"
