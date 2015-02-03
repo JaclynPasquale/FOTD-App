@@ -6,7 +6,7 @@
     <div class="show-date ">
       {{makeupListCtrl.selectedMakeup.date | date}}
     </div>
-    <button class="edit"><a href="/#/makeup/{{makeupId}}/edit">Edit</a></button>
+    <button class="edit" ng-click="makeupListCtrl.removeMakeup(makeupId)">Delete</button>
     <div class="row list-row" data-equalizer>
       <ul class="makeup-list large-3 small-8 medium-4 column" ng-repeat="(productId, product) in makeupListCtrl.selectedMakeup.products">
         <li>

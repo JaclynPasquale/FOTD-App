@@ -26,11 +26,22 @@
         console.log(err);
       });
     }
+
+    function deleteMakeup(makeupId, cb){
+      $http.delete(_fotdUrl(makeupId))
+      .success(function(){
+        cb();
+      })
+      .error(function(err){
+        console.log(err);
+      });
+    }
     return {
-      addMakeupInfo: addMakeupInfo
+      addMakeupInfo: addMakeupInfo,
+      deleteMakeup: deleteMakeup
     };
-  })
 
 
 
+})
 })();

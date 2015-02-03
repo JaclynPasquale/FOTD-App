@@ -385,9 +385,9 @@ fieldset, .fotd fieldset .panel {
 }
 
 .faces:hover {
-  -webkit-box-shadow: 0px 0px 50px 4px rgba(217,214,74,1);
-  -moz-box-shadow: 0px 0px 50px 4px rgba(217,214,74,1);
-  box-shadow: 0px 0px 50px 4px rgba(217,214,74,1);
+  -webkit-box-shadow: 0px 0px 67px 5px rgba(167,42,140,0.84);
+  -moz-box-shadow: 0px 0px 67px 5px rgba(167,42,140,0.84);
+  box-shadow: 0px 0px 67px 5px rgba(167,42,140,0.84);
 }
 .faces img {
   position: absolute;

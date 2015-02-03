@@ -1,7 +1,8 @@
 ;(function(){
 
   angular.module("fotdApp")
-  .controller("makeupListController", function($scope, makeupFactory, upload, $rootScope, $routeParams, $location, authFactory, $http, FIREBASE_URL, $filter) {
+  .controller("makeupListController", function($scope, makeupFactory, upload, $rootScope, $routeParams, $location, authFactory, $http, FIREBASE_URL, $filter)
+  {
     var vm = this;
 
     function getMakeup(){
@@ -20,6 +21,19 @@
 
 
     getMakeup();
+
+
+    vm.removeMakeup = function(){
+
+    var location = $location.$$path.slice( 1, $location.$$path.length);
+      makeupFactory.deleteMakeup(location, function(){
+        console.log(location);
+        debugger;
+        delete vm.selectedMakeup[location];
+        console.log("fotd has been deleted")
+        $location.path('/showFOTDs');
+      });
+    }
 
   });
 
