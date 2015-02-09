@@ -2,9 +2,6 @@
   angular.module('fotdApp')
   .controller('ChangePasswordController', function($scope, $location, authFactory){
     var vm = this;
-
-
-
     vm.changePassword = function(){
       authFactory.changePassword(vm.oldPassword, vm.newPassword, function(){
         $location.path('/logout');

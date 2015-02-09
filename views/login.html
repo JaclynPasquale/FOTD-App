@@ -15,8 +15,8 @@
 
           <p>
             <span class="fa fa-lock"></span>
-            <input ng-model="loginCtrl.password" type="password" placeholder="Password" value="Password" onBlur="if(this.value == '') this.value = 'Password'" onFocus="if(this.value == 'Password') this.value = ''" required>
-            <a href="/#/changepassword" class="forgot-pw" ng-click="loginCtrl.forgotPassword(); loginCtrl.backgroundChange()">Forgot Password</a>
+            <input ng-model="loginCtrl.password" type="password" placeholder="Password"  onBlur="if(this.value == '') this.value = 'Password'" onFocus="if(this.value == 'Password') this.value = ''" required>
+            <a href="/#/changepassword" class="forgot-pw" ng-click="loginCtrl.forgotPassword()">Forgot Password</a>
           </p>
 
           <input type="submit"  value="Login" ng-class="{disabled: loginForm.$invalid}">

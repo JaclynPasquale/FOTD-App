@@ -2,8 +2,6 @@
   angular.module('fotdApp')
   .config(function($routeProvider){
     $routeProvider
-
-
     .when('/', {
       templateUrl: 'views/login.html',
       controller: 'LoginController',

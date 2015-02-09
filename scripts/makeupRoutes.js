@@ -4,8 +4,6 @@
 angular.module("fotdApp")
 .config(function($routeProvider){
   $routeProvider
-
-
   .when("/makeup", {
     templateUrl: "views/takeFotd.html",
     controller: "MakeupController",

@@ -8,15 +8,15 @@
 
     factory.requireLogin = function(){
       if (!_isLoggedIn()) {
-        $location.path('/#/login');
+        $location.path('/login');
       } else if (_hasTemporaryPassword()) {
-        $location.path('/#/changepassword');
+        $location.path('/changepassword');
       }
     };
 
     factory.disallowLogin = function(){
       if (_isLoggedIn()) {
-        $location.path('/#/makeup');
+        $location.path('/makeup');
       }
     };
 
@@ -33,16 +33,16 @@
         email       : ref.getAuth().password.email,
         oldPassword : oldPass,
         newPassword : newPass,
-      }, function(error) {
-        if (error === null) {
-          alertify.success("Password changed successfully");
-          cb();
-        } else {
-          alertify.error("Error changing password:", error);
+        }, function(error) {
+          if (error === null) {
+            alertify.success("Password changed successfully");
+            cb();
+          } else {
+            alertify.error("Error changing password:", error);
+          }
         }
-      }
-    );
-  };
+      );
+    };
 
     factory.login = function(email, pass, cb){
       ref.authWithPassword({
