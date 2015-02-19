@@ -10,7 +10,7 @@
     vm.takePhoto = function(){
       console.log('take photo');
       takepicture();
-      $scope.photo = photo.currentSrc;
+      $scope.photo = photo.currentSrc || photo.src;
       console.log('BASE 64 DATA');
       console.log($scope.photo);
 
@@ -24,40 +24,64 @@
     height = 0;
 
 
-    navigator.getMedia = (navigator.getUserMedia ||
-      navigator.webkitGetUserMedia ||
-      navigator.mozGetUserMedia ||
-      navigator.msGetUserMedia);
+    // navigator.getMedia = (navigator.getUserMedia ||
+    //   navigator.webkitGetUserMedia ||
+    //   navigator.mozGetUserMedia ||
+    //   navigator.msGetUserMedia);
+    //
+    // navigator.getMedia(
+    //   {
+    //
+    //     video: true,
+    //     audio: false
+    //   },
+    //   function(stream) {
+    //     if (navigator.mozGetUserMedia) {
+    //       video.mozSrcObject = stream;
+    //     } else {
+    //       var vendorURL = window.URL || window.webkitURL;
+    //       video.src = vendorURL.createObjectURL(stream);
+    //     }
+    //     video.play();
+    //   },
+    //   function(err) {
+    //     console.log('An error occured!' + err);
+    //   }
+    // );
 
-      navigator.getMedia(
-      {
-        video: true,
-        audio: false
-      },
-      function(stream) {
-        if (navigator.mozGetUserMedia) {
-          video.mozSrcObject = stream;
+    var getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+    var cameraStream;
+
+    getUserMedia.call(navigator, {
+      video: true,
+      audio: false
+    }, function (stream) {
+        if (window.webkitURL) {
+          video.src = window.webkitURL.createObjectURL(stream);
         } else {
-          var vendorURL = window.URL || window.webkitURL;
-          video.src = vendorURL.createObjectURL(stream);
+          video.src = window.URL.createObjectURL(stream);
         }
-        video.play();
-      },
-      function(err) {
-        console.log('An error occured!' + err);
-      }
-    );
+      cameraStream = stream;
+      video.play();
+    },function(err){
+        console.log("An error occured!" + err);
+      });
+
 
 
     video.addEventListener('canplay', function(ev) {
-      if (!streaming) {
-        height = video.videoHeight / (video.videoWidth / width);
-        video.setAttribute('width', width);
-        video.setAttribute('height', height);
-        canvas.setAttribute('width', width);
-        canvas.setAttribute('height', height);
-        streaming = true;
-      }
+      setTimeout(
+        function () {
+          if (!streaming) {
+            height = video.videoHeight / (video.videoWidth / width);
+            video.setAttribute('width', width);
+            video.setAttribute('height', height);
+            canvas.setAttribute('width', width);
+            canvas.setAttribute('height', height);
+            streaming = true;
+          }
+        }, 100
+      );
     }, false);
 
 

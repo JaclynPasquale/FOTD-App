@@ -7,22 +7,17 @@
 
         <img ng-src="../images/save-and-share.png"/>
         <fieldset class="clearfix">
-
           <p>
             <span class="fa fa-envelope-o"></span>
             <input ng-model="loginCtrl.email" placeholder="Email" type="text" value="Email" onBlur="if(this.value == '') this.value = 'Email'" onFocus="if(this.value == 'Email') this.value = ''" required>
           </p>
-
           <p>
             <span class="fa fa-lock"></span>
             <input ng-model="loginCtrl.password" type="password" placeholder="Password"  onBlur="if(this.value == '') this.value = 'Password'" onFocus="if(this.value == 'Password') this.value = ''" required>
             <a href="/#/changepassword" class="forgot-pw" ng-click="loginCtrl.forgotPassword()">Forgot Password</a>
           </p>
-
           <input type="submit"  value="Login" ng-class="{disabled: loginForm.$invalid}">
           <div class="register-button" ng-class="{disabled: loginForm.$invalid}" ng-click="loginCtrl.register(); loginCtrl.backgroundChange()">Register</div>
-
-
         </fieldset>
 
       </form>
