@@ -7,3 +7,6 @@ Face of the Day: an acronym commonly used on Reddit in the subreddit r/makeupadd
 
 This app was built with Angular js. 
 FOTD is an app for storing your makeup looks and keeping a log of your looks and favorite cosmetic products. 
+
+View a demo at: https://fotd-app.firebaseio.com/
+
